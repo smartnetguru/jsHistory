@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../lusu.js" type="text/javascript"></script>
+    <title>History preview</title>
+  </head>
+<body>
+hi :-) Click <a href="javascript:lusu.history.push('/index/hi', function() { alert('Done'); });">here</a> to change the url.
+
+<script type="text/javascript">
+lusu.doc.ready(function() {
+  lusu.history.change();
+});
+</script>
+</body>
+</html>
