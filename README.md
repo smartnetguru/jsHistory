@@ -41,6 +41,7 @@ The initialize function will be called when a history.push is requested to-reset
 
 ```
 lusu.initialize = function() {
+  lusu.add.eventListeners('a');
   console.log('Load!');
 };
 ```

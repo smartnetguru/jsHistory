@@ -91,7 +91,7 @@ var lusu = {
          * @desc set's the inner body to the returned value.
          * @param string page
          */
-        'historyDone': function (page) {
+        'done': function (page) {
             lusu.get(page, function (response) {
                 document.body.innerHTML = lusu.history.getBody(response);
                 lusu.initialize();
@@ -113,7 +113,7 @@ var lusu = {
          */
         'change': function () {
             window.addEventListener('popstate', function (e) {
-              lusu.history.historyDone(e.state.page);
+              lusu.history.done(e.state.page);
             });
         }
     },
@@ -131,7 +131,7 @@ var lusu = {
             this.elements = document.querySelectorAll(selector);
             Array.prototype.forEach.call(this.elements, function (element) {
                 element.addEventListener('click', function (event) {
-                    if (element.getAttribute('href') !== undefined) {
+                    if (element.getAttribute('href') !== undefined && history && history.pushState) {
                         event.preventDefault();
                         lusu.history.push(element.getAttribute('href'));
                     }
@@ -139,7 +139,7 @@ var lusu = {
             });
         },
         /*
-         * @desc unserts the old selectors given by the elements variable.
+         * @desc unset the old selectors given by the elements variable.
          * @returns void
          */
         'unset': function () {
