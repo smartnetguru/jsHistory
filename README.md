@@ -39,6 +39,8 @@ lusu.history.change();
 
 The initialize function will be called when a history.push is requested to-reset the addEventListener for the new document, you can add an event listener by using `lusu.add.eventListeners('a')`, this will add the history push event to all the `a` attributes.
 
+```
 lusu.initialize = function() {
   console.log('Load!');
 };
+```
