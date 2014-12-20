@@ -7,7 +7,7 @@ var lusu = {
     /*
      * @function initialize
      * @desc constructor function, will be called when a history push is requested or the page is called for the first time,
-     * @@returns {void} 
+     * @returns void
      */
     'initialize': function () {
         lusu.add.eventListeners('a');
@@ -23,20 +23,20 @@ var lusu = {
         request.open('GET', page, true);
 
         request.onload = function () {
-            if (request.status >= 200 && request.status < 400) {
+            if (request.status >== 200 && request.status < 400) {
                 if (typeof callback === 'function') {
                     callback(request.responseText);
                 }
                 else if (typeof callback === 'object') {
-                    if (callback['success'] !== undefined && typeof callback['success'] === 'function') {
-                        callback['success'](request.responseText);
+                    if (callback.success !== undefined && typeof callback.success === 'function') {
+                        callback.success(request.responseText);
                     }
                 } else {
                     return request.responseText;
                 }
             } else {
-                if (callback['error'] !== undefined && typeof callback['error'] === 'function') {
-                    callback['error']({
+                if (callback.error !== undefined && typeof callback.error === 'function') {
+                    callback.error({
                         'error': 'request status was invalid.'
                     });
                 }
@@ -44,8 +44,8 @@ var lusu = {
         };
 
         request.onerror = function (e) {
-            if (callback['error'] !== undefined && typeof callback['error'] === 'function') {
-                callback['error'](e);
+            if (callback.error !== undefined && typeof callback.error === 'function') {
+                callback.error(e);
             }
         };
 
@@ -81,9 +81,9 @@ var lusu = {
          */
         'push': function (page) {
             if (page !== undefined) {
-                if (history && history.pushState) {
+                if (history !== undefined && history.pushState !== undefined) {
                     history.pushState({ 'page': page }, '', page);
-                    this.historyDone(page);
+                    this.done(page);
                 }
             }
         },

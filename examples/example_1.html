@@ -2,9 +2,14 @@
 <html>
   <head>
     <script src="../lusu.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    lusu.initialize = function() {
+      lusu.add.eventListeners('a');
+    };
+    </script>
     <title>History preview</title>
   </head>
 <body>
-hi :-) Click <a href="/Javascript-history/examples/example_2.html">here</a> to change the url.
+hi :-) Click <a href="example_2.html">here</a> to change the url.
 </body>
 </html>
