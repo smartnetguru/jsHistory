@@ -23,7 +23,7 @@ var lusu = {
         request.open('GET', page, true);
 
         request.onload = function () {
-            if (request.status >== 200 && request.status < 400) {
+            if (request.status >= 200 && request.status < 400) {
                 if (typeof callback === 'function') {
                     callback(request.responseText);
                 }
