@@ -37,7 +37,7 @@ var lusu = {
             } else {
                 if (callback.error !== undefined && typeof callback.error === 'function') {
                     callback.error({
-                        'error': 'request status was invalid.'
+                        error: 'request status was invalid.'
                     });
                 }
             }
@@ -45,7 +45,7 @@ var lusu = {
 
         request.onerror = function (e) {
             if (callback.error !== undefined && typeof callback.error === 'function') {
-                callback.error(e);
+                callback.error({ error: e});
             }
         };
 

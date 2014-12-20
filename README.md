@@ -20,6 +20,18 @@ lusu.doc.get('page', function(response) {
    // callback function with response (not required)
  });
 ```
+Or:
+```
+lusu.doc.get('page', {
+  success: function(response) {
+    console.log(response);
+  },
+  error: function(error) {
+    console.log(error);
+  }
+});
+```
+
 If you want to trigger an action when the document is ready:
 
 `lusu.doc.ready( function callback );`
