@@ -1,6 +1,6 @@
 /*
- * This file is licensed and opensourced by Olivier Beg on github.
- * @source: https://github.com/smiegles/Javascript-history
+ * This file is licensed and open sourced by Olivier Beg on Github.
+ * @source: hhttps://github.com/smiegles/jsHistory
  * @copyright: 2014
  */
 var lusu = {
